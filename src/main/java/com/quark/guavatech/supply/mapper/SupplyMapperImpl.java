@@ -15,6 +15,7 @@ public class SupplyMapperImpl implements SupplyMapper{
         supply.setUnit(supplyRequest.unit());
         supply.setAvailableQuantity(supplyRequest.availableQuantity());
         supply.setUnitCost(supplyRequest.unitCost());
+
         return supply;
     }
 

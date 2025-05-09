@@ -5,5 +5,5 @@ public record SupplyUsageResponse(Long usageId,
                                   String activityDescription,
                                   Long supplyId,
                                   String supplyName,
-                                  double usedQuantity) {
+                                  Double usedQuantity) {
 }

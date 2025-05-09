@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class SupplyServiceImpl implements SupplyService{
+
     private final SupplyRepository supplyRepository;
     private final SupplyMapper supplyMapper;
 
@@ -50,7 +51,7 @@ public class SupplyServiceImpl implements SupplyService{
 
     //Metodo para mostrar todods los insumos
     @Override
-    public List<SupplyResponse> getAllSupplies(){
+    public List<SupplyResponse> getAllSupplies() {
         return supplyRepository.findAll().stream()
                 .map(supplyMapper::toResponse)
                 .collect(Collectors.toList());
