@@ -10,10 +10,11 @@ public class SupplyMapperImpl implements SupplyMapper{
     @Override
     public Supply toEntity(SupplyRequest supplyRequest) {
         Supply supply = new Supply();
-        supply.setName(supplyRequest.getName());
-        supply.setUnit(supplyRequest.getUnit());
-        supply.setAvailableQuantity(supplyRequest.getAvailableQuantity());
-        supply.setUnitCost(supplyRequest.getUnitCost());
+
+        supply.setName(supplyRequest.name());
+        supply.setUnit(supplyRequest.unit());
+        supply.setAvailableQuantity(supplyRequest.availableQuantity());
+        supply.setUnitCost(supplyRequest.unitCost());
         return supply;
     }
 
