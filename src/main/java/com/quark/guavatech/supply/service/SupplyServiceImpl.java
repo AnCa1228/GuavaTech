@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class SupplyServiceImpl {
-    private SupplyRepository supplyRepository;
-    private SupplyMapper supplyMapper;
+public class SupplyServiceImpl implements SupplyService{
+    private final SupplyRepository supplyRepository;
+    private final SupplyMapper supplyMapper;
 
     //Metodo para crear un insumo
     public SupplyResponse createSupply(SupplyRequest supplyRequest){

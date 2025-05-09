@@ -11,9 +11,12 @@ import lombok.Setter;
 public class Supply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "supply_id")
     private Long supplyId;
     private String name;
     private String unit;
+    @Column(name = "available_quantity")
     private double availableQuantity;
+    @Column(name = "unit_cost")
     private double unitCost;
 }
