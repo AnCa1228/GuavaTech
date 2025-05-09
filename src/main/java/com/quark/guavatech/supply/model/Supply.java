@@ -1,12 +1,10 @@
 package com.quark.guavatech.supply.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Table(name = "supplies")
 @Getter
 @Setter
@@ -17,5 +15,5 @@ public class Supply {
     private String name;
     private String unit;
     private double availableQuantity;
-    private double unit_cost;
+    private double unitCost;
 }
