@@ -37,7 +37,7 @@ public class Activity {
     @OneToMany(mappedBy = "activity", cascade = CascadeType.ALL)
     private List<EmployeeActivity> employeeActivity;
 
-    @OneToMany(mappedBy = "supply_usages", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "activity", cascade = CascadeType.ALL)
     private List<SupplyUsage> supplyUsages;
 
 }

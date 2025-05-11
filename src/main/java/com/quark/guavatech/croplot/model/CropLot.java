@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -21,11 +21,13 @@ public class CropLot {
 
     private String name;
     private String location;
-    private Date start_date;
 
-    @OneToMany(mappedBy = "activity_id", cascade = CascadeType.ALL)
+    @Column(name = "start_date")
+    private LocalDate startDate;
+
+    @OneToMany(mappedBy = "cropLot", cascade = CascadeType.ALL)
     private List<Activity> activities;
 
-    @OneToMany(mappedBy = "production_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cropLot", cascade = CascadeType.ALL)
     private List<Production> productions;
 }
