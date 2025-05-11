@@ -7,19 +7,15 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 
 public record ActivityRequest(@NotNull
-                              Long activityId,
+                              Long activityTypeId,
+
+                              @NotNull
+                              Long cropLotId,
 
                               @NotBlank(message = "La fecha no puede estar vacía")
-                              @Size(max = 20, message = "La fecha no puede exceder los 20 caracteres")
                               LocalDate date,
 
                               @NotBlank(message = "La descripcion no puede estar vacía")
                               @Size(max = 250, message = "La descripcion no puede exceder los 250 caracteres")
-                              String description,
-
-                              @NotNull
-                              Long lotId,
-
-                              @NotNull
-                              Long userId) {
+                              String description) {
 }

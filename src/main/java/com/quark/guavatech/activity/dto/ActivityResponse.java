@@ -3,12 +3,9 @@ package com.quark.guavatech.activity.dto;
 import java.time.LocalDate;
 
 public record ActivityResponse(Long activityId,
-                               Long typeId,
-                               String activityType,
+                               String activityTypeName,
                                LocalDate date,
                                String description,
-                               Long lotId,
-                               String cropLot,
-                               Long userId,
-                               String user) {
+                               Long cropLotId,
+                               String nameCropLot) {
 }

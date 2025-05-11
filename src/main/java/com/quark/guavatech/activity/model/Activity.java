@@ -1,10 +1,14 @@
 package com.quark.guavatech.activity.model;
 
+import com.quark.guavatech.croplot.model.CropLot;
+import com.quark.guavatech.employee.model.EmployeeActivity;
+import com.quark.guavatech.supply.model.SupplyUsage;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "activities")
@@ -25,16 +29,15 @@ public class Activity {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    /*
+
     @ManyToOne
     @JoinColumn(name =  "lot_id", nullable = false)
     private CropLot cropLot;
 
-    @ManyToOne
-    @JoinColumn(name =  "user_id", nullable = false)
-    private User user;
+    @OneToMany(mappedBy = "activity", cascade = CascadeType.ALL)
+    private List<EmployeeActivity> employeeActivity;
 
-    @OneToMany(mappedBy = "activity", cascade = CascadeType.All)
-    private List<SupplyUsage> supplyUsages
-    */
+    @OneToMany(mappedBy = "supply_usages", cascade = CascadeType.ALL)
+    private List<SupplyUsage> supplyUsages;
+
 }
